@@ -10,15 +10,12 @@ const server = net.createServer((socket) => {
     dataStr = data.toString().substr(0, data.indexOf('\n'));
     dataStr = dataStr.split(" ");
     file = dataStr[1];
-    console.log(file);
 
     //transmit a hardcoded, in-memory html body for each route
     body = formatBody(file);
-    // console.log(body);
 
     //transmit standard http headers to the client
     header = formatHeader(body.length);
-    // console.log(header);
 
     //format response
     response = header + "\n" + body;
