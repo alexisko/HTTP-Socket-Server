@@ -7,6 +7,7 @@ var fileType;
 const server = net.createServer((socket) => {
   socket.on('data', (data) => {
     var dataStr, file, header, body, response;
+    console.log(data.toString());
     dataStr = data.toString().substr(0, data.indexOf('\n'));
     dataStr = dataStr.split(" ");
     file = dataStr[1];
